@@ -1,0 +1,32 @@
+// Syntax: // are comments
+// Space separated, the first word represents object type, the second word represents the object name.
+// The names must not contain spaces (for now).
+// The third and so are arguments which are object type specific.
+//
+// Object types (case insensitive):
+// Node: represents a node whose value is the sum of multiple transfer function outputs.
+//     E.g. Node NodeName TF1 TF2 TF3
+// TF(transfer function): a transfer function with a given input from a Node, must connect to exactly one node.
+//     E.g. TF TransferFunctionName Node1
+// IO: define the input and the output, e.g.: IO InputNodeName OutputNodeName
+
+// Define the input and output
+IO y1 y6
+
+// The figure
+Node y1
+TF A y1
+NODE y2 A J
+TF B y2
+Node y3 B H
+TF C y3
+Node y4 C I
+TF D y4
+Node y5 D G F
+TF E y5
+Node y6 E
+TF F y5
+TF G y3
+TF H y5
+TF I y5
+TF J y3
